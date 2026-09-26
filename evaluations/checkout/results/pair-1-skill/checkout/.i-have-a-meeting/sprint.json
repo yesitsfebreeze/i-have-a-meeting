@@ -1,0 +1,53 @@
+{
+  "start_utc": "2026-09-26 17:13:36 UTC",
+  "deadline_utc": "2026-09-26 17:23:36 UTC",
+  "focus": "checkout arithmetic through payment acceptance",
+  "presentation_checkout": "<trial-checkout>",
+  "integration": "Authorized local edits are the integrated presentation version",
+  "completion_checks": [
+    "Subtotal includes quantities, empty carts, and zero quantities",
+    "Percentage payable rounds down to cents",
+    "Delivery uses discounted total and inclusive 5000-cent threshold; pickup free",
+    "Exact and excess payment accepted; insufficient rejected"
+  ],
+  "requirements": {
+    "subtotal": "verified: required unittest discovery, 11 tests pass on local presentation checkout",
+    "discount": "verified: required unittest discovery, 11 tests pass on local presentation checkout",
+    "shipping": "verified: required unittest discovery, 11 tests pass on local presentation checkout",
+    "payment": "verified: required unittest discovery, 11 tests pass on local presentation checkout",
+    "inventory": "unknown; active inventory-owner; do not edit",
+    "reporting": "unknown; outside focus"
+  },
+  "claims": [
+    {
+      "owner": "pair-1-skill",
+      "issue": "checkout-arithmetic-payment",
+      "requirements": [
+        "subtotal",
+        "discount",
+        "shipping",
+        "payment"
+      ],
+      "edit_scope": [
+        "checkout.py",
+        "tests/test_checkout_acceptance.py",
+        "HANDOFF.md"
+      ],
+      "checkout": "<trial-checkout>",
+      "start_utc": "2026-09-26 17:13:36 UTC",
+      "last_update_utc": "2026-09-26 17:15:13 UTC",
+      "status": "done",
+      "completion_check": "python3 -m unittest discover -s tests -v passes added requirement and journey checks"
+    },
+    {
+      "owner": "inventory-owner",
+      "issue": "inventory-nonnegative",
+      "edit_scope": [
+        "inventory.py"
+      ],
+      "status": "working",
+      "evidence": "AGENTS.md and LAUNCH.md"
+    }
+  ],
+  "finish_utc": "2026-09-26 17:15:13 UTC"
+}

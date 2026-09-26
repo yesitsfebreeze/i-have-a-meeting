@@ -1,0 +1,136 @@
+{
+  "groups": {
+    "baseline": {
+      "runs": 3,
+      "requirements_passed": 12,
+      "requirements_total": 12,
+      "cases_passed": 207,
+      "cases_total": 207,
+      "all_protected_files_preserved": true,
+      "all_project_tests_pass": true,
+      "median_seconds": 49,
+      "median_requirements_per_minute": 4.8979591836734695
+    },
+    "skill": {
+      "runs": 3,
+      "requirements_passed": 12,
+      "requirements_total": 12,
+      "cases_passed": 207,
+      "cases_total": 207,
+      "all_protected_files_preserved": true,
+      "all_project_tests_pass": true,
+      "median_seconds": 94,
+      "median_requirements_per_minute": 2.5531914893617023
+    }
+  },
+  "trials": [
+    {
+      "trial": "pair-1-baseline",
+      "condition": "baseline",
+      "requirements_passed": 4,
+      "requirements_total": 4,
+      "cases_passed": 69,
+      "cases_total": 69,
+      "preserved_files": {
+        "AGENTS.md": true,
+        "LAUNCH.md": true,
+        "inventory.py": true,
+        "reporting.py": true,
+        "tests/test_checkout.py": true
+      },
+      "elapsed_seconds": 49,
+      "verified_requirements_per_minute": 4.8979591836734695,
+      "project_tests_exit": 0
+    },
+    {
+      "trial": "pair-1-skill",
+      "condition": "skill",
+      "requirements_passed": 4,
+      "requirements_total": 4,
+      "cases_passed": 69,
+      "cases_total": 69,
+      "preserved_files": {
+        "AGENTS.md": true,
+        "LAUNCH.md": true,
+        "inventory.py": true,
+        "reporting.py": true,
+        "tests/test_checkout.py": true
+      },
+      "elapsed_seconds": 97,
+      "verified_requirements_per_minute": 2.4742268041237114,
+      "project_tests_exit": 0
+    },
+    {
+      "trial": "pair-2-baseline",
+      "condition": "baseline",
+      "requirements_passed": 4,
+      "requirements_total": 4,
+      "cases_passed": 69,
+      "cases_total": 69,
+      "preserved_files": {
+        "AGENTS.md": true,
+        "LAUNCH.md": true,
+        "inventory.py": true,
+        "reporting.py": true,
+        "tests/test_checkout.py": true
+      },
+      "elapsed_seconds": 47,
+      "verified_requirements_per_minute": 5.1063829787234045,
+      "project_tests_exit": 0
+    },
+    {
+      "trial": "pair-2-skill",
+      "condition": "skill",
+      "requirements_passed": 4,
+      "requirements_total": 4,
+      "cases_passed": 69,
+      "cases_total": 69,
+      "preserved_files": {
+        "AGENTS.md": true,
+        "LAUNCH.md": true,
+        "inventory.py": true,
+        "reporting.py": true,
+        "tests/test_checkout.py": true
+      },
+      "elapsed_seconds": 92,
+      "verified_requirements_per_minute": 2.608695652173913,
+      "project_tests_exit": 0
+    },
+    {
+      "trial": "pair-3-baseline",
+      "condition": "baseline",
+      "requirements_passed": 4,
+      "requirements_total": 4,
+      "cases_passed": 69,
+      "cases_total": 69,
+      "preserved_files": {
+        "AGENTS.md": true,
+        "LAUNCH.md": true,
+        "inventory.py": true,
+        "reporting.py": true,
+        "tests/test_checkout.py": true
+      },
+      "elapsed_seconds": 57,
+      "verified_requirements_per_minute": 4.2105263157894735,
+      "project_tests_exit": 0
+    },
+    {
+      "trial": "pair-3-skill",
+      "condition": "skill",
+      "requirements_passed": 4,
+      "requirements_total": 4,
+      "cases_passed": 69,
+      "cases_total": 69,
+      "preserved_files": {
+        "AGENTS.md": true,
+        "LAUNCH.md": true,
+        "inventory.py": true,
+        "reporting.py": true,
+        "tests/test_checkout.py": true
+      },
+      "elapsed_seconds": 94,
+      "verified_requirements_per_minute": 2.5531914893617023,
+      "project_tests_exit": 0
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+# I Have a Meeting
+
+> A portable agent skill for a verified improvement loop: choose the highest-priority unowned launch blocker, claim it, fix it, test it, integrate it, and reassess before a shared deadline.
+
+## Skill
+
+- [i-have-a-meeting](i-have-a-meeting/SKILL.md): Complete, self-contained skill instructions and metadata. This is the canonical installation payload.
+- [Installation and shared operation](README.md): Local installation, URL-based installation, invocation, and coordination between workers.
+
+## Install from this entry point
+
+When a user asks you to install this skill, resolve the canonical skill link relative to this llms.txt location and read it. Save its complete Markdown contents as `i-have-a-meeting/SKILL.md` in the user's chosen agent skill directory. For Codex, use `.agents/skills/` in the target project for team use, or `~/.agents/skills/` for personal use. Create parent directories as needed. Preserve frontmatter and verify the saved bytes match the source. If an existing installation differs, show the difference and follow the user's update instruction; do not silently overwrite local customization.
+
+The skill has no scripts, dependencies, credentials, or additional payload files. This llms.txt is an agent-readable entry point, not an executable installer or an automatic registration mechanism. Do not execute the workflow as a side effect of installation.
+
+## Run with many agents
+
+Give every worker the same target repository, optional natural-language focus prompt, launch requirements, absolute deadline, integration target, and shared coordination location. Each worker invokes `i-have-a-meeting` with that input, or reads it from shared sprint state, and claims one available issue at a time. Independent clones or machines require an explicitly shared atomic coordination service or filesystem; installing identical instructions does not share work ownership. The skill does not spawn agents or increase concurrency limits.
