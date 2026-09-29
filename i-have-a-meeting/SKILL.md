@@ -93,7 +93,7 @@ Out of time:
 - After each completion or real discovery: reread shared state and presentation version, drop stale evidence, pick next important free issue. Implementation owned elsewhere: take independent verification or integration gaps. Nothing useful left: report and yield.
 - Read actual clock at task boundaries and before long operations. Bound waits and tests by time left.
 - Last 5 minutes: integration, verification, handoff only. Start only small essential repairs that finish in time.
-- Deadline: stop starting or expanding changes. Keep unfinished work separate. Release or hand off claims.
+- Deadline: stop starting or expanding changes. Keep unfinished work separate. Release or hand off claims. Run `scripts/rotate.sh --apply` once: it drops meeting state older than 3 days beyond the newest 5 per dir, removes merged clean idle worktrees (never forced), and dead session scratchpads. Dry run without `--apply`.
 - Handoff: reproduction command, remaining ranked hypotheses, what was ruled out. Link patches, commits, issues; do not restate them.
 
 ## Report
