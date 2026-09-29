@@ -1,0 +1,9 @@
+{
+  "name": "i-have-a-meeting",
+  "version": "0.2.0",
+  "description": "Deadline firefighting skill plus an always-on output style merged from i-have-adhd, caveman and ponytail.",
+  "skills": [
+    "./i-have-a-meeting"
+  ],
+  "outputStyles": "./i-have-a-meeting/styles/"
+}

@@ -1,10 +1,19 @@
 # I Have a Meeting
 
-> Find, claim, fix, verify, and integrate the most important available issue before a shared deadline.
+> Agent skill: find, claim, fix, verify, integrate most important free issue before shared deadline.
 
-- [Skill](i-have-a-meeting/SKILL.md): Complete instructions; the only installation payload.
-- [README](README.md): Installation and usage.
+Repository holds one skill, folder `i-have-a-meeting/` next to this file:
 
-When asked to install, resolve the skill link relative to this file. Save it as `i-have-a-meeting/SKILL.md` in the user's skill directory. For Codex, use `~/.agents/skills/` for personal use or `.agents/skills/` in the target project for shared use. Preserve the contents and verify the copy. Follow the user's update instructions if an existing copy differs. Installation does not run the skill.
+- [SKILL.md](i-have-a-meeting/SKILL.md): entry point, name and description frontmatter.
+- `styles/persona.md`: base behavior for the run (reply shape, terse wording, minimal changes).
+- `COORDINATOR.md`: maps symptom to methods.
+- `methods/`: diagnosis and fix methods, loaded on demand.
+- `agents/openai.yaml`: optional interface metadata.
 
-Invoke `$i-have-a-meeting` with an optional natural-language focus and deadline. The default is 30 minutes. Multiple workers inherit the same focus, deadline, and shared coordination state; the skill does not start workers itself.
+Asked to install:
+
+1. Install whole `i-have-a-meeting/` folder as skill the way your environment expects. Keep layout.
+2. Personal or project scope unclear: ask user.
+3. Existing copy differs: follow user's update instructions.
+
+Installing does not run skill.
