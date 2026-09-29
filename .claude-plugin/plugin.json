@@ -1,7 +1,7 @@
 {
   "name": "i-have-a-meeting",
-  "version": "0.2.0",
-  "description": "Deadline firefighting skill plus an always-on output style merged from i-have-adhd, caveman and ponytail.",
+  "version": "0.3.0",
+  "description": "Deadline push toward a project's vision before a meeting, with a git claim ledger, a method library, and an always-on output style.",
   "skills": [
     "./i-have-a-meeting"
   ],

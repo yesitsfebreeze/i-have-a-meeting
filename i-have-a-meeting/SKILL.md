@@ -14,7 +14,7 @@ Loop until deadline:
 4. Verify on presentation version.
 5. Integrate, reassess, repeat.
 
-Progress counts only when requirement passes on shared presentation version. Every move rests on evidence. [COORDINATOR.md](COORDINATOR.md) maps symptom to methods.
+Progress counts only when requirement passes on shared presentation version. Every move rests on evidence. [scripts/coordinator.sh](scripts/coordinator.sh) maps finding to methods: `coordinator.sh "<finding>"` with `TYPESAFE_API_KEY`, else `coordinator.sh --table` and route by hand. Open only method files it names.
 
 Read [styles/persona.md](styles/persona.md) first. It is base behavior for every reply and every change in this run.
 
@@ -38,7 +38,7 @@ Red presentation version preempts everything: [stop-the-line](methods/stop-the-l
 3. Required behavior, by user impact.
 4. Polish, only after required behavior works.
 
-`TYPESAFE_API_KEY` set: rank candidates with `scripts/triage.sh "<issue>"`; it returns priority level above. Your evidence overrides it.
+Rank candidates with `scripts/coordinator.sh "<issue>"`; name vision check it breaks in text ("breaks presentation step 3: ..."). It returns priority level above and pick methods that apply. Your evidence overrides it.
 
 Same tier: [value-per-minute](methods/value-per-minute.md). Pick smallest complete fix likely verified and integrated before deadline. Split oversized blocker into useful prerequisites; report what cannot fit. Never substitute mocks, hardcoded success, or disabled checks.
 
@@ -57,14 +57,14 @@ Workers know each other only through git. Existing atomic coordination system wi
 - **Isolation:** own branch or clone per worker. Isolate mutable test resources too.
 - **GitHub:** protect `ledger` against force-push and deletion; lease pushes still work.
 
-No shared remote or no push right: report gap, continue read-only diagnosis. Skill does not start workers or provision slots.
+Single worker, no shared remote: skip ledger; keep sprint record in untracked `.i-have-a-meeting/SPRINT`. Fix on own branch; after verify, integrate by local fast-forward merge onto presentation branch (never push). Several workers without shared remote or push right: report gap, continue read-only diagnosis. Skill does not start workers or provision slots.
 
 ## Diagnose
 
 1. **Build red loop.** No theory before loop. One command (failing test, curl, CLI fixture diff, headless browser script, replayed payload, throwaway harness) that drives real code path and asserts exact reported symptom. Run it; record command and output.
 2. **Make it fast and deterministic.** Seconds, not minutes. Pin time and seed; isolate files and network. Flaky: loop or stress trigger to raise rate. Slow: measure baseline first.
 3. **Shrink.** Cut inputs and steps until each remaining part matters.
-4. **Route.** Open [COORDINATOR.md](COORDINATOR.md), follow symptom row, run its red check. Red check goes red: top hypothesis.
+4. **Route.** Run `scripts/coordinator.sh` on reduced symptom, run its red check. Red: top hypothesis. Green: row ruled out; try next row or its No row line. Diagnose with named methods until cause confirmed; fix in its Fix order; close with its Close methods. Treat its pick as hypothesis; red checks decide.
 5. **Probe.** Rank 3–5 falsifiable hypotheses ("if X, changing Y makes it pass"). Cheapest high-ranked first, one variable per probe.
 
 No loop fits time left: say so, list what was tried, ask for access, captured artifact, or human to drive reproduction. Tag temporary logs with unique prefix (`[DEBUG-a4f2]`) so one grep removes them. Redact secrets in every command, log, artifact.
@@ -73,7 +73,7 @@ No loop fits time left: say so, list what was tried, ask for access, captured ar
 
 1. **Shape.** Take fix methods from coordinator row plus coordinator **Fix shape** table. Project patterns, smallest complete fix. No speculative refactors, dependencies, unrelated improvements.
 2. **Regression test.** Seam reaches real failure: turn reduced reproduction into test, watch fail, fix, watch pass. Test too shallow to show real failure is not evidence; record missing seam instead. Expected values come from requirement or known-good example, never recomputed the way code does.
-3. **Verify.** Rerun original loop, walk affected user journey, run required checks. Record actual outcomes, including failed, skipped, unavailable. Compiling alone proves nothing. Remove fix: original loop must go red; restore: green. Went away by itself: not fixed.
+3. **Verify.** Rerun original loop, walk affected user journey, run required checks. Record actual outcomes, including failed, skipped, unavailable. Compiling alone proves nothing. Remove fix: original loop must go red; restore: green. Clear bytecode and build caches first (`python3 -B`, clean build), else stale cache keeps check falsely green. Went away by itself: not fixed.
 4. **Close.** Run coordinator closing methods. Remove debug tags and throwaway files. State confirmed cause.
 
 Out of time:
@@ -85,7 +85,7 @@ Out of time:
 
 - Keep ownership through integration. One integrator, or claim ledger id `integrate` for each merge. Reconcile with latest presentation revision; verify combined result before `done`.
 - Conflict: read commits and claims behind each side. Keep both intents where they fit; presentation goal wins where not. Never invent new behavior. Rerun checks on merged result. Release integration lock after; keep metadata lock short.
-- Follow existing permissions for push, merge, deploy, external changes. Authorization missing: leave verified patch plus exact handoff marked `ready-to-integrate`; still unresolved.
+- Follow existing permissions for push, merge, deploy, external changes; single worker's local fast-forward merge needs none. Authorization missing: leave verified patch plus exact handoff marked `ready-to-integrate`; still unresolved.
 - Other blockers: record evidence and smallest unblock. Moving on: hand off or release claim explicitly, keep patches and overlap info. No retry without new evidence.
 
 ## Repeat and hand off

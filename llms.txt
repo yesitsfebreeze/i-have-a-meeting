@@ -6,7 +6,7 @@ Repository holds one skill, folder `i-have-a-meeting/` next to this file:
 
 - [SKILL.md](i-have-a-meeting/SKILL.md): entry point, name and description frontmatter.
 - `styles/persona.md`: base behavior for the run (reply shape, terse wording, minimal changes).
-- `COORDINATOR.md`: maps symptom to methods.
+- `scripts/coordinator.sh`: maps finding to methods (Jev; `--table` without a key).
 - `methods/`: diagnosis and fix methods, loaded on demand.
 - `agents/openai.yaml`: optional interface metadata.
 

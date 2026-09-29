@@ -1,3 +1,4 @@
 /.i-have-a-meeting/
 __pycache__/
 *.py[cod]
+.DS_Store

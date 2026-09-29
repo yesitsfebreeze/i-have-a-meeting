@@ -2,7 +2,7 @@
 
 **Use when:** before marking fix done or handing to integration.
 
-**Move:** Run project's existing type checker, linter, static analyzer on changed files. Add asserts for assumptions fix relies on, so violated assumption fails loud. Step through new code once in debugger or trace.
+**Move:** Run project's existing type checker, linter, static analyzer on changed files; none installed: record that, never install one mid-sprint. Add asserts for assumptions fix relies on, so violated assumption fails loud. Watch new code execute once (trace, print, or debugger); fix under 5 lines that test drives through: test run counts.
 
 **Done when:** checkers clean on changed files, new asserts hold on core journey, you watched fix execute.
 

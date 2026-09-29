@@ -22,7 +22,7 @@ In your project:
 
 Codex: `$i-have-a-meeting`. Focus optional. Default deadline 30 minutes.
 
-Many agents: give each same focus, deadline, shared coordination location. They claim separate issues and verify before marking done. Start them with your usual agent tool.
+Many agents: give each same focus, deadline, and shared git remote. They claim separate issues through a ledger branch and verify before marking done. Start them with your usual agent tool.
 
 ## Persona
 
@@ -30,7 +30,7 @@ Many agents: give each same focus, deadline, shared coordination location. They 
 
 ## Methods
 
-[`COORDINATOR.md`](i-have-a-meeting/COORDINATOR.md) maps symptom to methods: which check confirms cause, which methods diagnose, which fix. Agent opens only files its row names.
+[`scripts/coordinator.sh`](i-have-a-meeting/scripts/coordinator.sh) maps a finding to methods with TypeSafe Jev (`TYPESAFE_API_KEY`): priority, which check confirms cause, which methods diagnose, which fix. Without a key, `coordinator.sh --table` prints the routing tables. Agent opens only method files it names.
 
 - **Symptom methods:** stale build, env drift, expired access, missing data, race, edge input, contract drift, slow path, regression, hidden step. Each: usual cause, confirming check, where fix belongs, tempting wrong fix.
 - **Craft methods:** how elite programmers prove and fix any bug. Think first, step real path, look at data first, hunt same mistake, and eight more, each with primary source (Carmack, Thompson and Pike, Kernighan, Torvalds, Beck, Knuth, Dean, Muratori, Acton, Brooks).
