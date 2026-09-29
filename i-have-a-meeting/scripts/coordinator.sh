@@ -24,6 +24,10 @@ Check before claiming and at every task boundary.
 | Several free issues, same priority tier | value-per-minute |
 | Change deletes data, sends, rotates secrets, force-pushes, deploys publicly | door-check |
 | Half of claimed estimate passed | halfway-breaker |
+| Agent reports fix done or working | prove-done |
+| Two or more agents fail on, claim, or fix same large check | split-the-check |
+| Non-vital feature broken; fix will not verify before deadline | kill-switch |
+| Last 10 minutes, or path verified and nothing larger fits | demo-reset |
 
 ## Matrix
 Run the row's red check first; green rules the row out. Diagnose left to right, stop at first confirmed cause.
@@ -37,6 +41,7 @@ Run the row's red check first; green rules the row out. Diagnose left to right, 
 | Unusual input (empty, one item, max value, odd characters, real sample data) breaks tested path | edge-input | data-first, then think-first | pure-extract, no-special-case |
 | Each side passes own tests; combined journey fails | contract-drift | data-first on one real exchange | plain-fix; easy-change when many consumers read field |
 | Works, but too slow on host, with real data, or on venue Wi-Fi | slow-path | estimate-profile | plain-fix on largest share only |
+| Check passes and fails on same code, no change between runs | flaky-check | data-first on failing run; step-the-path when wait or order not obvious | plain-fix; race when fault in code under test |
 | Worked at known earlier revision or rehearsal | regression | recent-change when history short; bisect (from regression method) when long | revert or plain-fix |
 | Fails silently, returns wrong default, or aborts far from fault | swallowed-error | step-the-path to first handler on path | plain-fix in handler |
 | Works for one person only, or broke after fresh setup | hidden-step | step-the-path through written setup | plain-fix in setup path |
@@ -50,6 +55,7 @@ Top to bottom, stop at first confirmed cause. Cause matches no row: propose a sy
 | Fails only in some modes, states, orders | skipped-update |
 | Unfamiliar code, or bug depends on state, mode, config | step-the-path |
 | You know the code | think-first |
+| Failing input, test, or config large; cause unclear | shrink-the-repro |
 | Two hypotheses died, or 5 minutes without new evidence | fresh-view |
 
 ## Fix shape
