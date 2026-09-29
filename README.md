@@ -26,7 +26,7 @@ Many agents: give each same focus, deadline, and shared git remote. They claim s
 
 ## Persona
 
-[`styles/persona.md`](i-have-a-meeting/styles/persona.md) is base behavior for every run. Three layers: reply shape from [i-have-adhd](https://github.com/ayghri/i-have-adhd) (next action first, numbered steps, state restated), terse wording from [caveman](https://github.com/JuliusBrussee/caveman), minimal changes from [ponytail](https://github.com/DietrichGebert/ponytail). All MIT. No need to install them separately.
+Base behavior for every run comes from [preciser](https://github.com/yesitsfebreeze/preciser): reply shape, terse wording, minimal changes, working ethic. Install it next to this skill.
 
 ## Methods
 

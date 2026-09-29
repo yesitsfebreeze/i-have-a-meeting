@@ -14,9 +14,9 @@ Loop until deadline:
 4. Verify on presentation version.
 5. Integrate, reassess, repeat.
 
-Progress counts only when requirement passes on shared presentation version. Every move rests on evidence. [scripts/coordinator.sh](scripts/coordinator.sh) maps finding to methods: `coordinator.sh "<finding>"` with `TYPESAFE_API_KEY`, else `coordinator.sh --table` and route by hand. Open only method files it names.
+Progress counts only when requirement passes on shared presentation version. [scripts/coordinator.sh](scripts/coordinator.sh) maps finding to methods: `coordinator.sh "<finding>"` with `TYPESAFE_API_KEY`, else `coordinator.sh --table` and route by hand. Open only method files it names.
 
-Read [styles/persona.md](styles/persona.md) first. It is base behavior for every reply and every change in this run.
+Base behavior for every reply and every change in this run: the Toni persona from [preciser](https://github.com/yesitsfebreeze/preciser) (shape, words, build, ethic). Not already active as output style: load `preciser` skill first.
 
 ## Set the finish line
 
@@ -40,7 +40,7 @@ Red presentation version preempts everything: [stop-the-line](methods/stop-the-l
 
 Rank candidates with `scripts/coordinator.sh "<issue>"`; name vision check it breaks in text ("breaks presentation step 3: ..."). It returns priority level above and pick methods that apply. Your evidence overrides it.
 
-Same tier: [value-per-minute](methods/value-per-minute.md). Pick smallest complete fix likely verified and integrated before deadline. Split oversized blocker into useful prerequisites; report what cannot fit. Never substitute mocks, hardcoded success, or disabled checks.
+Same tier: [value-per-minute](methods/value-per-minute.md). Pick smallest complete fix likely verified and integrated before deadline. Split oversized blocker into useful prerequisites; report what cannot fit.
 
 One-way change (data, sends, secrets, public deploy, force-push): [door-check](methods/door-check.md). At half estimate: [halfway-breaker](methods/halfway-breaker.md). State issue, impact, owner, completion check, estimate in minutes. Claim with estimate; claimed scope overlapping yours counts as taken.
 
@@ -67,13 +67,13 @@ Single worker, no shared remote: skip ledger; keep sprint record in untracked `.
 4. **Route.** Run `scripts/coordinator.sh` on reduced symptom, run its red check. Red: top hypothesis. Green: row ruled out; try next row or its No row line. Diagnose with named methods until cause confirmed; fix in its Fix order; close with its Close methods. Treat its pick as hypothesis; red checks decide.
 5. **Probe.** Rank 3–5 falsifiable hypotheses ("if X, changing Y makes it pass"). Cheapest high-ranked first, one variable per probe.
 
-No loop fits time left: say so, list what was tried, ask for access, captured artifact, or human to drive reproduction. Tag temporary logs with unique prefix (`[DEBUG-a4f2]`) so one grep removes them. Redact secrets in every command, log, artifact.
+No loop fits time left: say so, list what was tried, ask for access, captured artifact, or human to drive reproduction. Tag temporary logs with unique prefix (`[DEBUG-a4f2]`) so one grep removes them.
 
 ## Fix and verify
 
 1. **Shape.** Take fix methods from coordinator row plus coordinator **Fix shape** table. Project patterns, smallest complete fix. No speculative refactors, dependencies, unrelated improvements.
 2. **Regression test.** Seam reaches real failure: turn reduced reproduction into test, watch fail, fix, watch pass. Test too shallow to show real failure is not evidence; record missing seam instead. Expected values come from requirement or known-good example, never recomputed the way code does.
-3. **Verify.** Rerun original loop, walk affected user journey, run required checks. Record actual outcomes, including failed, skipped, unavailable. Compiling alone proves nothing. Remove fix: original loop must go red; restore: green. Clear bytecode and build caches first (`python3 -B`, clean build), else stale cache keeps check falsely green. Went away by itself: not fixed.
+3. **Verify.** Rerun original loop, walk affected user journey, run required checks. Record actual outcomes, including failed, skipped, unavailable. Remove fix: original loop must go red; restore: green. Clear bytecode and build caches first (`python3 -B`, clean build), else stale cache keeps check falsely green.
 4. **Close.** Run coordinator closing methods. Remove debug tags and throwaway files. State confirmed cause.
 
 Out of time:
@@ -86,7 +86,7 @@ Out of time:
 - Keep ownership through integration. One integrator, or claim ledger id `integrate` for each merge. Reconcile with latest presentation revision; verify combined result before `done`.
 - Conflict: read commits and claims behind each side. Keep both intents where they fit; presentation goal wins where not. Never invent new behavior. Rerun checks on merged result. Release integration lock after; keep metadata lock short.
 - Follow existing permissions for push, merge, deploy, external changes; single worker's local fast-forward merge needs none. Authorization missing: leave verified patch plus exact handoff marked `ready-to-integrate`; still unresolved.
-- Other blockers: record evidence and smallest unblock. Moving on: hand off or release claim explicitly, keep patches and overlap info. No retry without new evidence.
+- Other blockers: record evidence and smallest unblock. Moving on: hand off or release claim explicitly, keep patches and overlap info.
 
 ## Repeat and hand off
 
@@ -102,7 +102,7 @@ First line: shortest path through vision that works now, or one action user must
 
 - **Resolved:** observable changes, patch, commit, file links.
 - **Verified:** actual checks, outcomes, revision, environment.
-- **Remaining:** verified/total requirements, failures, unknowns, owners, minutes left. Never count unknowns as passing; never invent progress percentages.
+- **Remaining:** verified/total requirements, failures, unknowns, owners, minutes left.
 - **Presentation:** version or URL, path that works, paths to avoid, limitations, pending integration. Presentation-ready is not production-ready unless production checks pass.
 
 No preamble, no recap prose, no closing offer. Last line: one next action doable in under 2 minutes.

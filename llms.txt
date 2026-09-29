@@ -5,7 +5,6 @@
 Repository holds one skill, folder `i-have-a-meeting/` next to this file:
 
 - [SKILL.md](i-have-a-meeting/SKILL.md): entry point, name and description frontmatter.
-- `styles/persona.md`: base behavior for the run (reply shape, terse wording, minimal changes).
 - `scripts/coordinator.sh`: maps finding to methods (Jev; `--table` without a key).
 - `methods/`: diagnosis and fix methods, loaded on demand.
 - `agents/openai.yaml`: optional interface metadata.
@@ -13,6 +12,7 @@ Repository holds one skill, folder `i-have-a-meeting/` next to this file:
 Asked to install:
 
 1. Install whole `i-have-a-meeting/` folder as skill the way your environment expects. Keep layout.
+   Also install persona skill from https://github.com/yesitsfebreeze/preciser/blob/main/llms.txt (base behavior).
 2. Personal or project scope unclear: ask user.
 3. Existing copy differs: follow user's update instructions.
 
