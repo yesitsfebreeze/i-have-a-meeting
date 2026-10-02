@@ -2,7 +2,7 @@
 
 > Agent skill: find, claim, fix, verify, integrate most important free issue before shared deadline.
 
-Repository holds one skill, folder `i-have-a-meeting/` next to this file:
+Repository holds `i-have-a-meeting/` and the optional Codex coordinator skill `i-have-an-endless-meeting/` next to this file:
 
 - [SKILL.md](i-have-a-meeting/SKILL.md): entry point, name and description frontmatter.
 - `scripts/coordinator.sh`: maps finding to methods (Jev; `--table` without a key).

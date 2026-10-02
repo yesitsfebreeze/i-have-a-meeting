@@ -18,6 +18,10 @@ Progress counts only when requirement passes on shared presentation version. [sc
 
 Base behavior for every reply and every change in this run: the Toni persona from [preciser](https://github.com/yesitsfebreeze/preciser) (shape, words, build, ethic). Not already active as output style: load `preciser` skill first.
 
+## Plan time very, very tightly
+
+Never give sub-agents or claims generous time. Restrict them so they work faster: allot about a third of what feels reasonable (rule of thumb). Applies to every estimate, claim, handoff and dispatched worker deadline. Work fills any slot; a tight slot forces the smallest complete fix. Blocker does not fit the cut time: split it into prerequisites, never stretch the clock.
+
 ## Set the finish line
 
 1. Read focus, deadline, requirements, constraints from invocation. Default: vision checks from step 2, deadline 30 minutes after invocation.
